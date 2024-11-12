@@ -1,9 +1,9 @@
-import ClassRoom from "./0-classroom";
-
+import ClassRoom from './0-classroom';
+/* eslint-disable no-underscore-dangle */
 export default function initializeRooms() {
-    let firstClass = new ClassRoom(19);
-    let secondClass = new ClassRoom(20);
-    let thirdClass = new ClassRoom(34);
+  const firstClass = new ClassRoom(19);
+  const secondClass = new ClassRoom(20);
+  const thirdClass = new ClassRoom(34);
 
-    return [firstClass, secondClass, thirdClass];
+  return [firstClass, secondClass, thirdClass];
 }
