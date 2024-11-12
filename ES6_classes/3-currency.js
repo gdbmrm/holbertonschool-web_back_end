@@ -12,20 +12,22 @@ export default class HolbertonCourse {
   get getName() {
     return this._name;
   }
-  
-  set changeCode(newCode) {
+
+  set code(newCode) {
     if (typeof newCode !== 'string') {
       throw new TypeError('Code must be a string');
     }
     this._code = newCode;
   }
 
-  set changeName(newName) {
+  set name(newName) {
     if (typeof newName !== 'string') {
       throw new TypeError('Name must be a string');
     }
     this._name = newName;
   }
-}    
-  function displayFullCurrency() {
+
+  displayFullCurrency() {
+    return `${this._name}(${this._code})`;
+  }
 }
