@@ -1,5 +1,4 @@
 import Currency from './3-currency';
-/* eslint-disable no-underscore-dangle */
 
 export default class Pricing {
   constructor(amount, currency) {
