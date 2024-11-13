@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-export default class HolbertonCourse {
+export default class Currency {
   constructor(code, name) {
     if (typeof code !== 'string') {
       throw new TypeError('Code must be a string');
