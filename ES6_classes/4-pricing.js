@@ -44,6 +44,7 @@ export default class Pricing {
     if (typeof amount !== 'number' || typeof conversionRate !== 'number') {
       throw new TypeError('Both amount and conversionRate must be numbers');
     }
-    return amount * conversionRate;
+    let price = amount * conversionRate;
+    return price;
   }
 }
