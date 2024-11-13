@@ -1,15 +1,21 @@
 /* eslint-disable no-underscore-dangle */
 export default class HolbertonCourse {
   constructor(code, name) {
+    if (typeof code !== 'string') {
+      throw new TypeError('Code must be a string');
+    }
     this._code = code;
+    if (typeof name !== 'string') {
+      throw new TypeError('Name must be a string');
+    }
     this._name = name;
   }
 
-  get getCode() {
+  get code() {
     return this._code;
   }
 
-  get getName() {
+  get name() {
     return this._name;
   }
 
@@ -28,6 +34,6 @@ export default class HolbertonCourse {
   }
 
   displayFullCurrency() {
-    return `${this._name}(${this._code})`;
+    return `${this._name} (${this._code})`;
   }
 }
