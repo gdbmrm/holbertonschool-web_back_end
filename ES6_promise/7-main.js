@@ -18,6 +18,4 @@ const promiseFR = new Promise(function(resolve, reject) {
 const test = async () => {
     console.log(await loadBalancer(promiseUK, promiseFR));
     console.log(await loadBalancer(promiseUKSlow, promiseFR));
-}
-
-test();
+};
