@@ -8,10 +8,11 @@ import random
 import asyncio
 from typing import List
 
+
 async def async_generator() -> List[float]:
     """
-    function asyc generator
+    function async generator
     """
-    for num in range(0, 11):
+    for num in range(0, 10):
         await asyncio.sleep(1)
         yield random.uniform(0, 10)
