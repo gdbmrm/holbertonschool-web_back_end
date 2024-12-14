@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
+ Hypermedia pagination
 """
 from typing import Tuple
 import csv
-import math
 from typing import List
+import math
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
@@ -36,27 +37,34 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        function get_page
+        """
         assert isinstance(page, int)
         assert isinstance(page_size, int)
         assert page > 0
         assert page_size > 0
 
-        self.__dataset = self.dataset()
+        dataset = self.dataset()
 
         start, end = index_range(page, page_size)
 
-        if end > len(self.__dataset) or start > len(self.__dataset):
+        if start >= len(self.__dataset):
             return []
 
-        return self.__dataset[start:end]
+        return dataset[start:end]
+
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        function get_hyper
+        """
         pages = self.get_page(page, page_size)
         next_pages = page + 1
         prev_pages = page - 1
-        total_pages = round(len(self.__dataset) / page_size)
+        total_pages = ceil(len(self.__dataset) / page_size)
 
-        if page > total_pages:
+        if page < total_pages:
             next_pages = None
 
         if prev_pages <= 0:
