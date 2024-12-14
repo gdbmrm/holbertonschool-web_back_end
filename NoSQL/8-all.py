@@ -7,6 +7,9 @@ mongo_collection will be the pymongo collection object
 """
 
 def list_all(mongo_collection):
+    """
+    function list_all
+    """
     all_doc = []
     docs = mongo_collection.find()
 
