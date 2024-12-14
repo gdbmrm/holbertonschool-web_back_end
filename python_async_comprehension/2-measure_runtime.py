@@ -7,16 +7,16 @@ measure_runtime should measure the total runtime and return it.
 """
 import asyncio
 import time
+from typing import float
+
 async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
-async def measure_runtime():
+async def measure_runtime() -> float:
     """
     function measure_runtime
     """
     start_time = time.time()
-
     result = await asyncio.gather(async_comprehension())
-
     total_time = time.time() - start_time
     return total_time
