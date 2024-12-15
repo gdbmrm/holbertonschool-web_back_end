@@ -4,7 +4,6 @@
 """
 from typing import Tuple
 import csv
-from typing import List
 import math
 
 
@@ -55,7 +54,7 @@ class Server:
         return dataset[start:end]
 
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> List[List]:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """
         function get_hyper
         """
@@ -67,7 +66,7 @@ class Server:
         if page < total_pages:
             next_pages = None
 
-        if prev_pages <= 0:
+        if prev_pages > 1:
             prev_pages = None
 
         my_dict = {
