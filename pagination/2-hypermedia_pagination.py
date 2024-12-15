@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """
- Hypermedia pagination
+Hypermedia pagination
 """
 from typing import Tuple
+from typing import List
 import csv
-import math
+from math import ceil
 
 
 def index_range(page: int, page_size: int) -> Tuple[int, int]:
