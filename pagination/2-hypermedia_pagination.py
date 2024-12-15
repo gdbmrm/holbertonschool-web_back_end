@@ -59,22 +59,26 @@ class Server:
         function get_hyper
         """
         pages = self.get_page(page, page_size)
-        next_pages = page + 1
-        prev_pages = page - 1
+        next_page = page + 1
+        prev_page = page - 1
         total_pages = ceil(len(self.__dataset) / page_size)
 
         if page < total_pages:
-            next_pages = None
+            next_page = page + 1
+        else:
+            next_page = None
 
         if page > 1:
-            prev_pages = None
+            prev_page = page - 1
+        else:
+            prev_page = None
 
         my_dict = {
             "page_size": len(pages),
             "page": page,
             "data": pages,
-            "next_page": next_pages,
-            "prev_page": prev_pages,
+            "next_page": next_page,
+            "prev_page": prev_page,
             "total_pages": total_pages
         }
 
