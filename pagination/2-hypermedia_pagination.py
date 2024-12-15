@@ -59,8 +59,8 @@ class Server:
         function get_hyper
         """
         pages = self.get_page(page, page_size)
-        next_page = page + 1
-        prev_page = page - 1
+        next_page = 0
+        prev_page = 0
         total_pages = ceil(len(self.__dataset) / page_size)
 
         if page < total_pages:
