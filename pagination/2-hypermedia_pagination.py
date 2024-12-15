@@ -66,7 +66,7 @@ class Server:
         if page < total_pages:
             next_pages = None
 
-        if prev_pages > 1:
+        if page > 1:
             prev_pages = None
 
         my_dict = {
